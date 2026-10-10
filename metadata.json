@@ -1,0 +1,6 @@
+{
+  "name": "GlobalAutoDrive",
+  "description": "Europe's premier transatlantic automotive marketplace based in Frankfurt, Germany. Curating high-demand Japanese, American, and European SUVs, sedans, and performance vehicles with TÜV-certified imports, expert reviews, and secure transactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
