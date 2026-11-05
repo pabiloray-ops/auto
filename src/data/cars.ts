@@ -6,7 +6,7 @@ import honda_civic_type_r_fl5_int_img from '../assets/images/civic_type_r_interi
 import nissan_x_trail_epower_int_img from '../assets/images/xtrail_interior_1789009924661.jpg';
 import tesla_model_y_performance_int_img from '../assets/images/modely_interior_1789009935005.jpg';
 import ford_mustang_dark_horse_int_img from '../assets/images/mustang_interior_1789009945509.jpg';
-import cadillac_lyriq_luxury_awd_int_img from '../assets/images/lyriq_interior_1789009955664.jpg';
+import cadillac_lyriq_luxury_awd_int_img from '../assets/images/lyriq_cockpit_ambient_1793896829235.jpg';
 import jeep_grand_cherokee_4xe_int_img from '../assets/images/grand_cherokee_interior_1789009974297.jpg';
 import tesla_model_3_long_range_int_img from '../assets/images/model3_interior_1789009985478.jpg';
 import porsche_macan_gts_int_img from '../assets/images/macan_interior_1789009996117.jpg';
@@ -55,6 +55,12 @@ import cx60_detail_img from "../assets/images/cx60_detail_red_1793891004909.jpg"
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 import xtrail_side_img from "../assets/images/xtrail_side_color_1793894223279.jpg";
 import xtrail_detail_img from "../assets/images/xtrail_detail_color_1793894244205.jpg";
+import lyriq_side_img from "../assets/images/lyriq_side_black_1793895783401.jpg";
+import lyriq_rear_img from "../assets/images/lyriq_rear_perfect_1793896798665.jpg";
+import lyriq_detail_img from "../assets/images/lyriq_wheel_detail_1793896813153.jpg";
+import model3_side_img from "../assets/images/model3_side_red_1793897742368.jpg";
+import model3_rear_img from "../assets/images/model3_rear_red_1793897764812.jpg";
+import model3_detail_img from "../assets/images/model3_detail_red_1793897782165.jpg";
 
 export const CARS_DATA: Car[] = [
   // JAPANESE POPULAR SUVS & SEDANS
@@ -454,10 +460,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: cadillac_lyriq_luxury_awd_img,
-      sideProfile: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: lyriq_side_img,
+      rearView: lyriq_rear_img,
       interior: cadillac_lyriq_luxury_awd_int_img,
-      detail: 'https://images.unsplash.com/photo-1600706432502-77a0e2e32771?auto=format&fit=crop&w=1200&q=80',
+      detail: lyriq_detail_img,
     },
     features: [
       'Monumental 33-inch Diagonal Curved 9K LED Display',
@@ -557,10 +563,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: tesla_model_3_long_range_img,
-      sideProfile: 'https://images.unsplash.com/photo-1561580125-028ce3cb82eb?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1536700503339-1e4b06520771?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: model3_side_img,
+      rearView: model3_rear_img,
       interior: tesla_model_3_long_range_int_img,
-      detail: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?auto=format&fit=crop&w=1200&q=80',
+      detail: model3_detail_img,
     },
     features: [
       '629 km WLTP Range (One of the Most Aerodynamic Sedans in Europe, Cd 0.219)',
