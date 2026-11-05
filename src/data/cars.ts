@@ -18,7 +18,7 @@ import lexus_rx_500h_f_sport_img from '../assets/images/lexus_rx_500h_1789008657
 import mazda_cx_60_phev_img from '../assets/images/mazda_cx_60_1789008671158.jpg';
 import honda_civic_type_r_fl5_img from '../assets/images/honda_civic_type_r_fl5_1789008686052.jpg';
 import nissan_x_trail_epower_img from '../assets/images/nissan_x_trail_1789008701887.jpg';
-import tesla_model_y_performance_img from '../assets/images/tesla_model_y_perf_1789008712543.jpg';
+import tesla_model_y_performance_img from '../assets/images/modely_front_white_1793887012775.jpg';
 import ford_mustang_dark_horse_img from '../assets/images/ford_mustang_dark_horse_1789008725614.jpg';
 import cadillac_lyriq_luxury_awd_img from '../assets/images/cadillac_lyriq_1789008737207.jpg';
 import jeep_grand_cherokee_4xe_img from '../assets/images/jeep_grand_cherokee_1789008838857.jpg';
@@ -37,6 +37,9 @@ import rx500h_detail_img from "../assets/images/rx500h_detail_color_179388553335
 import civic_side_img from "../assets/images/civic_side_white_1793886007590.jpg";
 import civic_rear_img from "../assets/images/civic_rear_white_1793886023572.jpg";
 import civic_detail_img from "../assets/images/civic_detail_white_1793886040129.jpg";
+import modely_side_img from "../assets/images/modely_side_white_1793887031366.jpg";
+import modely_rear_img from "../assets/images/modely_rear_white_1793887047955.jpg";
+import modely_detail_img from "../assets/images/modely_detail_white_1793887073212.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
 export const CARS_DATA: Car[] = [
@@ -334,10 +337,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: tesla_model_y_performance_img,
-      sideProfile: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: modely_side_img,
+      rearView: modely_rear_img,
       interior: tesla_model_y_performance_int_img,
-      detail: 'https://images.unsplash.com/photo-1617704548623-340376564e68?auto=format&fit=crop&w=1200&q=80',
+      detail: modely_detail_img,
     },
     features: [
       'Autobahn-Ready 250 km/h Top Speed with Track Mode',

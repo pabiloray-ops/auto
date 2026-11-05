@@ -1,5 +1,6 @@
 import { BlogPost } from '../types';
 import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
+import modely_front_img from '../assets/images/modely_front_white_1793887012775.jpg';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -81,7 +82,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Chief Automotive Editor & Nürburgring Test Driver',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     },
-    coverImage: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80',
+    coverImage: modely_front_img,
     ratingScore: 9.1,
     pros: [
       'Tesla Model Y delivers unmatched energy efficiency at high speeds (17.3 kWh/100km) and superior Supercharger density in Germany',
