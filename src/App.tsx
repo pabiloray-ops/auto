@@ -16,6 +16,8 @@ import { SeoInspectorModal } from './components/SeoInspectorModal';
 import { AuthModal } from './components/AuthModal';
 import { UserDashboardModal } from './components/UserDashboardModal';
 import { Footer } from './components/Footer';
+import { VehicleComparisonModal } from './components/VehicleComparisonModal';
+import { ComparisonDock } from './components/ComparisonDock';
 import { 
   ChevronRight, 
   MapPin, 
@@ -24,7 +26,8 @@ import {
   CheckCircle2, 
   SlidersHorizontal,
   Flame,
-  Globe2
+  Globe2,
+  ArrowLeftRight
 } from 'lucide-react';
 
 function MainAppContent() {
@@ -36,6 +39,8 @@ function MainAppContent() {
   const [dashboardModalOpen, setDashboardModalOpen] = useState(false);
   const [dashboardInitialTab, setDashboardInitialTab] = useState<'saved' | 'inquiries' | 'reservations'>('saved');
   const [seoInspectorOpen, setSeoInspectorOpen] = useState(false);
+  const [comparisonModalOpen, setComparisonModalOpen] = useState(false);
+  const [comparisonCarIds, setComparisonCarIds] = useState<string[]>([]);
 
   // Search & Filter state
   const [searchQuery, setSearchQuery] = useState('');
@@ -55,6 +60,47 @@ function MainAppContent() {
   const showToast = (msg: string) => {
     setToastMessage(msg);
     setTimeout(() => setToastMessage(null), 3500);
+  };
+
+  // Comparison helpers
+  const comparisonCars = useMemo(() => {
+    return CARS_DATA.filter((car) => comparisonCarIds.includes(car.id));
+  }, [comparisonCarIds]);
+
+  const handleToggleCarComparison = (car: Car) => {
+    setComparisonCarIds((prev) => {
+      if (prev.includes(car.id)) {
+        showToast(`Removed ${car.name} from comparison.`);
+        return prev.filter((id) => id !== car.id);
+      }
+      if (prev.length >= 3) {
+        showToast('Maximum 3 vehicles can be compared. Remove one to add this vehicle.');
+        return prev;
+      }
+      showToast(`Added ${car.name} to comparison (${prev.length + 1}/3).`);
+      return [...prev, car.id];
+    });
+  };
+
+  const handleAddCarToComparison = (car: Car) => {
+    setComparisonCarIds((prev) => {
+      if (prev.includes(car.id)) return prev;
+      if (prev.length >= 3) {
+        showToast('Maximum 3 vehicles can be compared. Remove one to add this vehicle.');
+        return prev;
+      }
+      showToast(`Added ${car.name} to comparison (${prev.length + 1}/3).`);
+      return [...prev, car.id];
+    });
+  };
+
+  const handleRemoveCarFromComparison = (carId: string) => {
+    setComparisonCarIds((prev) => prev.filter((id) => id !== carId));
+  };
+
+  const handleClearComparison = () => {
+    setComparisonCarIds([]);
+    showToast('Vehicle comparison cleared.');
   };
 
   // Scroll helper
@@ -196,6 +242,8 @@ function MainAppContent() {
         onSearchChange={setSearchQuery}
         selectedCurrency={selectedCurrency}
         onCurrencyToggle={() => setSelectedCurrency((prev) => (prev === 'EUR' ? 'USD' : 'EUR'))}
+        comparisonCount={comparisonCarIds.length}
+        onOpenComparison={() => setComparisonModalOpen(true)}
       />
 
       <main className="flex-1">
@@ -304,6 +352,8 @@ function MainAppContent() {
                   onQuickInquire={setSelectedCarForInquiry}
                   onQuickReserve={setSelectedCarForCheckout}
                   selectedCurrency={selectedCurrency}
+                  isComparing={comparisonCarIds.includes(car.id)}
+                  onToggleCompare={handleToggleCarComparison}
                 />
               ))}
             </div>
@@ -319,6 +369,16 @@ function MainAppContent() {
         {/* Dealership Location & Hub Showcase (Frankfurt, Germany) */}
         <LocationHubSection />
       </main>
+
+      {/* Floating Comparison Dock (visible when vehicles are selected) */}
+      <ComparisonDock
+        comparisonCars={comparisonCars}
+        onRemoveCar={handleRemoveCarFromComparison}
+        onClearAll={handleClearComparison}
+        onOpenModal={() => setComparisonModalOpen(true)}
+        onScrollToInventory={() => scrollToSection('inventory')}
+        selectedCurrency={selectedCurrency}
+      />
 
       {/* Footer */}
       <Footer
@@ -337,6 +397,36 @@ function MainAppContent() {
         onOpenCheckout={(c) => {
           setSelectedCarForDetail(null);
           setSelectedCarForCheckout(c);
+        }}
+        selectedCurrency={selectedCurrency}
+        isComparing={Boolean(selectedCarForDetail && comparisonCarIds.includes(selectedCarForDetail.id))}
+        onToggleCompare={handleToggleCarComparison}
+        onOpenComparison={() => {
+          setSelectedCarForDetail(null);
+          setComparisonModalOpen(true);
+        }}
+      />
+
+      {/* Vehicle Specification Comparison Modal */}
+      <VehicleComparisonModal
+        isOpen={comparisonModalOpen}
+        onClose={() => setComparisonModalOpen(false)}
+        comparisonCars={comparisonCars}
+        allCars={CARS_DATA}
+        onAddCar={handleAddCarToComparison}
+        onRemoveCar={handleRemoveCarFromComparison}
+        onClearAll={handleClearComparison}
+        onSelectCarForDetail={(car) => {
+          setComparisonModalOpen(false);
+          setSelectedCarForDetail(car);
+        }}
+        onOpenInquiry={(car) => {
+          setComparisonModalOpen(false);
+          setSelectedCarForInquiry(car);
+        }}
+        onOpenCheckout={(car) => {
+          setComparisonModalOpen(false);
+          setSelectedCarForCheckout(car);
         }}
         selectedCurrency={selectedCurrency}
       />

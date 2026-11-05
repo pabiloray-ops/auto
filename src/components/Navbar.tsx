@@ -10,7 +10,8 @@ import {
   Globe2, 
   Menu, 
   X,
-  Code2
+  Code2,
+  ArrowLeftRight
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -23,6 +24,8 @@ interface NavbarProps {
   onSearchChange: (q: string) => void;
   selectedCurrency: 'EUR' | 'USD';
   onCurrencyToggle: () => void;
+  comparisonCount?: number;
+  onOpenComparison?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -34,6 +37,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onSearchChange,
   selectedCurrency,
   onCurrencyToggle,
+  comparisonCount = 0,
+  onOpenComparison,
 }) => {
   const { user, isAuthenticated, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -164,6 +169,27 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Action Icons & User Profile */}
           <div className="flex items-center gap-2.5">
+            {/* Compare Button */}
+            {onOpenComparison && (
+              <button
+                onClick={onOpenComparison}
+                className={`relative p-2 rounded-lg border transition-all ${
+                  comparisonCount > 0
+                    ? 'bg-amber-500/15 border-amber-500/60 text-amber-400 hover:bg-amber-500/25'
+                    : 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700'
+                }`}
+                title="Compare Vehicle Specifications (Up to 3 Cars)"
+                aria-label="Vehicle Specification Comparison"
+              >
+                <ArrowLeftRight className={`w-4 h-4 ${comparisonCount > 0 ? 'text-amber-400' : ''}`} />
+                {comparisonCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-500 text-[10px] font-bold text-neutral-950 flex items-center justify-center">
+                    {comparisonCount}
+                  </span>
+                )}
+              </button>
+            )}
+
             {/* Wishlist Button */}
             <button
               onClick={() => onOpenDashboard('saved')}
@@ -356,6 +382,25 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Frankfurt Dealership & Hub
             </button>
+            {onOpenComparison && (
+              <button
+                onClick={() => {
+                  onOpenComparison();
+                  setMobileMenuOpen(false);
+                }}
+                className="px-3 py-2 text-left text-sm font-medium text-amber-400 hover:bg-neutral-900 rounded-lg flex items-center justify-between"
+              >
+                <span className="flex items-center gap-2">
+                  <ArrowLeftRight className="w-4 h-4" />
+                  Vehicle Comparison
+                </span>
+                {comparisonCount > 0 && (
+                  <span className="px-2 py-0.5 rounded-full bg-amber-500 text-neutral-950 text-xs font-bold font-mono">
+                    {comparisonCount} / 3
+                  </span>
+                )}
+              </button>
+            )}
             <button
               onClick={() => {
                 onOpenSeoInspector();

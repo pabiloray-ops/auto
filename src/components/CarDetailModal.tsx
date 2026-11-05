@@ -17,7 +17,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Calculator,
-  Lock
+  Lock,
+  ArrowLeftRight
 } from 'lucide-react';
 import { Car } from '../types';
 import { useAuth } from '../context/AuthContext';
@@ -28,6 +29,9 @@ interface CarDetailModalProps {
   onOpenInquiry: (car: Car) => void;
   onOpenCheckout: (car: Car) => void;
   selectedCurrency: 'EUR' | 'USD';
+  isComparing?: boolean;
+  onToggleCompare?: (car: Car) => void;
+  onOpenComparison?: () => void;
 }
 
 export const CarDetailModal: React.FC<CarDetailModalProps> = ({
@@ -36,6 +40,9 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
   onOpenInquiry,
   onOpenCheckout,
   selectedCurrency,
+  isComparing = false,
+  onToggleCompare,
+  onOpenComparison,
 }) => {
   const { isCarSaved, toggleFavoriteCar } = useAuth();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -84,6 +91,21 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
+            {onToggleCompare && (
+              <button
+                onClick={() => onToggleCompare(car)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold transition-all ${
+                  isComparing 
+                    ? 'bg-amber-500 border-amber-400 text-neutral-950 font-bold shadow-md shadow-amber-500/20' 
+                    : 'bg-neutral-800 border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-600'
+                }`}
+                title={isComparing ? 'Remove from Comparison' : 'Add to Side-by-Side Comparison (Max 3)'}
+              >
+                <ArrowLeftRight className="w-3.5 h-3.5" />
+                <span>{isComparing ? 'In Compare' : 'Compare'}</span>
+              </button>
+            )}
+
             <button
               onClick={() => toggleFavoriteCar(car.id)}
               className={`p-2 rounded-lg border transition-all ${
@@ -240,6 +262,20 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
                   <Calendar className="w-4 h-4 text-amber-400" />
                   <span>Schedule Autobahn Test Drive in Frankfurt</span>
                 </button>
+
+                {onToggleCompare && (
+                  <button
+                    onClick={() => onToggleCompare(car)}
+                    className={`w-full py-2.5 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 border transition-all ${
+                      isComparing
+                        ? 'bg-amber-500/15 border-amber-500 text-amber-400 font-bold'
+                        : 'bg-neutral-900 hover:bg-neutral-800 border-neutral-700 text-neutral-300'
+                    }`}
+                  >
+                    <ArrowLeftRight className="w-4 h-4" />
+                    <span>{isComparing ? '✓ Vehicle in Comparison (Click to Remove)' : '+ Add to Side-by-Side Comparison (Max 3)'}</span>
+                  </button>
+                )}
               </div>
             </div>
           </div>

@@ -29,6 +29,8 @@ import audi_rs6_avant_performance_img from '../assets/images/audi_rs6_avant_1789
 import hyundai_ioniq_5_n_img from '../assets/images/hyundai_ioniq_5_n_1789008820068.jpg';
 
 import rav4_rear_img from "../assets/images/rav4_rear_1789010792301.jpg";
+import rav4_side_img from "../assets/images/rav4_side_color_1793800306624.jpg";
+import rav4_detail_img from "../assets/images/rav4_detail_color_1793800319730.jpg";
 import rx500h_rear_img from "../assets/images/rx500h_rear_1789010807397.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
@@ -70,10 +72,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: toyota_rav4_prime_img,
-      sideProfile: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: rav4_side_img,
       rearView: rav4_rear_img,
       interior: toyota_rav4_prime_int_img,
-      detail: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80',
+      detail: rav4_detail_img,
     },
     features: [
       'Intelligent E-Four All-Wheel Drive',

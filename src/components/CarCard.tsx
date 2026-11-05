@@ -9,7 +9,8 @@ import {
   ChevronRight, 
   MapPin,
   Sparkles,
-  Info
+  Info,
+  ArrowLeftRight
 } from 'lucide-react';
 import { Car } from '../types';
 import { useAuth } from '../context/AuthContext';
@@ -20,6 +21,8 @@ interface CarCardProps {
   onQuickInquire: (car: Car) => void;
   onQuickReserve: (car: Car) => void;
   selectedCurrency: 'EUR' | 'USD';
+  isComparing?: boolean;
+  onToggleCompare?: (car: Car) => void;
 }
 
 const REGION_FLAGS: Record<string, string> = {
@@ -35,6 +38,8 @@ export const CarCard: React.FC<CarCardProps> = ({
   onQuickInquire,
   onQuickReserve,
   selectedCurrency,
+  isComparing = false,
+  onToggleCompare,
 }) => {
   const { isCarSaved, toggleFavoriteCar } = useAuth();
   const saved = isCarSaved(car.id);
@@ -81,17 +86,38 @@ export const CarCard: React.FC<CarCardProps> = ({
             )}
           </div>
 
-          {/* Favorite Wishlist Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleFavoriteCar(car.id);
-            }}
-            className="pointer-events-auto p-2 rounded-full bg-neutral-950/80 backdrop-blur-md border border-neutral-700 text-neutral-300 hover:text-rose-500 hover:scale-110 transition-all"
-            title={saved ? 'Remove from Saved' : 'Save to Preferences'}
-          >
-            <Heart className={`w-4 h-4 ${saved ? 'text-rose-500 fill-rose-500' : ''}`} />
-          </button>
+          {/* Action Buttons: Compare & Favorite */}
+          <div className="flex items-center gap-1.5 pointer-events-auto">
+            {onToggleCompare && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleCompare(car);
+                }}
+                className={`p-2 rounded-full backdrop-blur-md border transition-all ${
+                  isComparing 
+                    ? 'bg-amber-500 border-amber-400 text-neutral-950 shadow-md shadow-amber-500/30 scale-105' 
+                    : 'bg-neutral-950/80 border-neutral-700 text-neutral-300 hover:text-amber-400 hover:border-amber-500/50 hover:scale-105'
+                }`}
+                title={isComparing ? 'Remove from Comparison' : 'Add to Side-by-Side Comparison (Max 3)'}
+                aria-label={isComparing ? 'Remove from Comparison' : 'Add to Comparison'}
+              >
+                <ArrowLeftRight className="w-4 h-4" />
+              </button>
+            )}
+
+            {/* Favorite Wishlist Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleFavoriteCar(car.id);
+              }}
+              className="p-2 rounded-full bg-neutral-950/80 backdrop-blur-md border border-neutral-700 text-neutral-300 hover:text-rose-500 hover:scale-110 transition-all"
+              title={saved ? 'Remove from Saved' : 'Save to Preferences'}
+            >
+              <Heart className={`w-4 h-4 ${saved ? 'text-rose-500 fill-rose-500' : ''}`} />
+            </button>
+          </div>
         </div>
 
         {/* Bottom Image Thumbnail Toggles */}
@@ -235,6 +261,20 @@ export const CarCard: React.FC<CarCardProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5">
+            {onToggleCompare && (
+              <button
+                onClick={() => onToggleCompare(car)}
+                className={`px-2 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 border ${
+                  isComparing 
+                    ? 'bg-amber-500/20 border-amber-500 text-amber-400 font-bold' 
+                    : 'bg-neutral-800/80 hover:bg-neutral-800 border-neutral-700/80 text-neutral-300 hover:text-white'
+                }`}
+                title={isComparing ? 'Remove from comparison' : 'Add to side-by-side comparison'}
+              >
+                <ArrowLeftRight className="w-3 h-3" />
+                <span className="hidden sm:inline">{isComparing ? 'Comparing' : 'Compare'}</span>
+              </button>
+            )}
             <button
               onClick={() => onQuickInquire(car)}
               className="px-2.5 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-semibold transition-colors"
