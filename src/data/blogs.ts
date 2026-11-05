@@ -1,4 +1,5 @@
 import { BlogPost } from '../types';
+import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -14,7 +15,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Chief Automotive Editor & Nürburgring Test Driver',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     },
-    coverImage: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1200&q=80',
+    coverImage: rx500h_side_img,
     ratingScore: 9.3,
     pros: [
       'Unsurpassed long-term mechanical reliability (Toyota 10-year / 160,000 km Relax warranty in Europe)',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Globe2, ShieldCheck, Sparkles, ArrowRight, Zap, Flame, Compass } from 'lucide-react';
 import { RegionOfOrigin, VehicleSegment } from '../types';
+import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
 
 interface ContinentShowcaseProps {
   onSelectContinent: (region: RegionOfOrigin, segment?: VehicleSegment) => void;
@@ -18,7 +19,7 @@ export const ContinentShowcase: React.FC<ContinentShowcaseProps> = ({ onSelectCo
       badgeColor: 'text-amber-400 bg-amber-500/10 border-amber-500/30',
       description: 'Japanese hybrid powertrains and plug-in electric AWDs are surging in German cities. With Toyota’s 10-year Relax warranty and sub-25g CO2 emissions, they combine zero inner-city restriction worries with bulletproof daily durability.',
       stats: '75 km Pure EV City Range • E-Four AWD • Takumi Luxury',
-      image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80',
+      image: rx500h_side_img,
       region: 'Japan' as RegionOfOrigin,
       defaultSegment: 'SUV' as VehicleSegment,
     },
