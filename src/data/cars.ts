@@ -43,6 +43,9 @@ import modely_detail_img from "../assets/images/modely_detail_white_179388707321
 import mustang_side_img from "../assets/images/mustang_side_blue_1793887632988.jpg";
 import mustang_rear_img from "../assets/images/mustang_rear_blue_1793887649363.jpg";
 import mustang_detail_img from "../assets/images/mustang_detail_blue_1793887666964.jpg";
+import macan_side_img from "../assets/images/macan_side_red_1793888984175.jpg";
+import macan_rear_img from "../assets/images/macan_rear_red_1793889002503.jpg";
+import macan_detail_img from "../assets/images/macan_detail_red_1793889022229.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
 export const CARS_DATA: Car[] = [
@@ -598,10 +601,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: porsche_macan_gts_img,
-      sideProfile: 'https://images.unsplash.com/photo-1503376713998-1e4575b7b901?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: macan_side_img,
+      rearView: macan_rear_img,
       interior: porsche_macan_gts_int_img,
-      detail: 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80',
+      detail: macan_detail_img,
     },
     features: [
       'Porsche Active Suspension Management (PASM) with Ride-Height Drop',
