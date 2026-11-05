@@ -25,7 +25,7 @@ import jeep_grand_cherokee_4xe_img from '../assets/images/jeep_grand_cherokee_17
 import tesla_model_3_long_range_img from '../assets/images/tesla_model_3_highland_1789008765880.jpg';
 import porsche_macan_gts_img from '../assets/images/porsche_macan_gts_1789008776245.jpg';
 import bmw_x5_xdrive50e_img from '../assets/images/bmw_x5_50e_1789008795438.jpg';
-import audi_rs6_avant_performance_img from '../assets/images/audi_rs6_avant_1789008807011.jpg';
+import audi_rs6_avant_performance_img from '../assets/images/rs6_front_blue_1793889674947.jpg';
 import hyundai_ioniq_5_n_img from '../assets/images/hyundai_ioniq_5_n_1789008820068.jpg';
 
 import rav4_rear_img from "../assets/images/rav4_rear_1789010792301.jpg";
@@ -46,6 +46,12 @@ import mustang_detail_img from "../assets/images/mustang_detail_blue_17938876669
 import macan_side_img from "../assets/images/macan_side_red_1793888984175.jpg";
 import macan_rear_img from "../assets/images/macan_rear_red_1793889002503.jpg";
 import macan_detail_img from "../assets/images/macan_detail_red_1793889022229.jpg";
+import rs6_side_img from "../assets/images/rs6_side_blue_1793889691891.jpg";
+import rs6_rear_img from "../assets/images/rs6_rear_blue_1793889709294.jpg";
+import rs6_detail_img from "../assets/images/rs6_detail_blue_1793889727140.jpg";
+import cx60_side_img from "../assets/images/cx60_side_red_1793890963298.jpg";
+import cx60_rear_img from "../assets/images/cx60_rear_red_1793890983636.jpg";
+import cx60_detail_img from "../assets/images/cx60_detail_red_1793891004909.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
 export const CARS_DATA: Car[] = [
@@ -190,10 +196,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: mazda_cx_60_phev_img,
-      sideProfile: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: cx60_side_img,
+      rearView: cx60_rear_img,
       interior: mazda_cx_60_phev_int_img,
-      detail: 'https://images.unsplash.com/photo-1616789916428-1f518e932b71?auto=format&fit=crop&w=1200&q=80',
+      detail: cx60_detail_img,
     },
     features: [
       'Japanese Kakenui White Leather Craftsmanship with Maple Wood',
@@ -702,10 +708,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: audi_rs6_avant_performance_img,
-      sideProfile: 'https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0b35?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: rs6_side_img,
+      rearView: rs6_rear_img,
       interior: audi_rs6_avant_performance_int_img,
-      detail: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80',
+      detail: rs6_detail_img,
     },
     features: [
       'Autobahn Weapon: 305 km/h Top Speed with Ceramic Brakes',
