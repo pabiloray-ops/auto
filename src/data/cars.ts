@@ -53,6 +53,8 @@ import cx60_side_img from "../assets/images/cx60_side_red_1793890963298.jpg";
 import cx60_rear_img from "../assets/images/cx60_rear_red_1793890983636.jpg";
 import cx60_detail_img from "../assets/images/cx60_detail_red_1793891004909.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
+import xtrail_side_img from "../assets/images/xtrail_side_color_1793894223279.jpg";
+import xtrail_detail_img from "../assets/images/xtrail_detail_color_1793894244205.jpg";
 
 export const CARS_DATA: Car[] = [
   // JAPANESE POPULAR SUVS & SEDANS
@@ -296,10 +298,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: nissan_x_trail_epower_img,
-      sideProfile: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: xtrail_side_img,
       rearView: xtrail_rear_img,
       interior: nissan_x_trail_epower_int_img,
-      detail: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c3fe?auto=format&fit=crop&w=1200&q=80',
+      detail: xtrail_detail_img,
     },
     features: [
       '100% Electric Motor Wheel Drive without Plug-in Hassle',
