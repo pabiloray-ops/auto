@@ -61,6 +61,12 @@ import lyriq_detail_img from "../assets/images/lyriq_wheel_detail_1793896813153.
 import model3_side_img from "../assets/images/model3_side_red_1793897742368.jpg";
 import model3_rear_img from "../assets/images/model3_rear_red_1793897764812.jpg";
 import model3_detail_img from "../assets/images/model3_detail_red_1793897782165.jpg";
+import x5_side_img from "../assets/images/bmw_x5_side_black_1793899283021.jpg";
+import x5_rear_img from "../assets/images/bmw_x5_rear_black_1793899300235.jpg";
+import x5_detail_img from "../assets/images/bmw_x5_detail_black_1793899317592.jpg";
+import ioniq5n_side_img from "../assets/images/ioniq5n_side_blue_1793899998265.jpg";
+import ioniq5n_rear_img from "../assets/images/ioniq5n_rear_blue_1793900017536.jpg";
+import ioniq5n_detail_img from "../assets/images/ioniq5n_detail_blue_1793900038390.jpg";
 
 export const CARS_DATA: Car[] = [
   // JAPANESE POPULAR SUVS & SEDANS
@@ -667,10 +673,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: bmw_x5_xdrive50e_img,
-      sideProfile: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: x5_side_img,
+      rearView: x5_rear_img,
       interior: bmw_x5_xdrive50e_int_img,
-      detail: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80',
+      detail: x5_detail_img,
     },
     features: [
       '104 km Pure Electric WLTP Range for Full EV Commutes',
@@ -770,10 +776,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: hyundai_ioniq_5_n_img,
-      sideProfile: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1600706432502-77a0e2e32771?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: ioniq5n_side_img,
+      rearView: ioniq5n_rear_img,
       interior: hyundai_ioniq_5_n_int_img,
-      detail: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80',
+      detail: ioniq5n_detail_img,
     },
     features: [
       'N e-Shift & N Active Sound+ Simulating Pops & Bangs and Gearchanges',
