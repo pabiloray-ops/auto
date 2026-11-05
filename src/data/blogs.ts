@@ -1,7 +1,9 @@
 import { BlogPost } from '../types';
 import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
+import autobahn_japanese_hybrid_img from '../assets/images/japanese_hybrid_autobahn_clean_1793901761030.jpg';
 import modely_front_img from '../assets/images/modely_front_white_1793887012775.jpg';
 import mustang_side_img from '../assets/images/mustang_side_blue_1793887632988.jpg';
+import cx60_side_img from '../assets/images/cx60_side_red_1793890963298.jpg';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -17,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Chief Automotive Editor & Nürburgring Test Driver',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     },
-    coverImage: rx500h_side_img,
+    coverImage: autobahn_japanese_hybrid_img,
     ratingScore: 9.3,
     pros: [
       'Unsurpassed long-term mechanical reliability (Toyota 10-year / 160,000 km Relax warranty in Europe)',
@@ -116,7 +118,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Chief Automotive Editor & Nürburgring Test Driver',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     },
-    coverImage: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+    coverImage: cx60_side_img,
     ratingScore: 9.0,
     pros: [
       '€12,000 - €18,000 price advantage when configured with equivalent luxury packages to German rivals',

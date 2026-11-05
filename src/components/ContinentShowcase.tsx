@@ -3,6 +3,8 @@ import { Globe2, ShieldCheck, Sparkles, ArrowRight, Zap, Flame, Compass } from '
 import { RegionOfOrigin, VehicleSegment } from '../types';
 import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
 import mustang_side_img from '../assets/images/mustang_side_blue_1793887632988.jpg';
+import rs6_side_img from '../assets/images/rs6_side_blue_1793889691891.jpg';
+import ioniq5n_track_img from '../assets/images/ioniq5n_nurburgring_track_1793900803789.jpg';
 
 interface ContinentShowcaseProps {
   onSelectContinent: (region: RegionOfOrigin, segment?: VehicleSegment) => void;
@@ -48,7 +50,7 @@ export const ContinentShowcase: React.FC<ContinentShowcaseProps> = ({ onSelectCo
       badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
       description: 'The domestic titans engineered natively for unlimited velocity on the German Autobahn network. Used as our engineering control baseline to benchmark every transatlantic and Japanese import.',
       stats: '305 km/h Top Speeds • Quattro & xDrive • 104 km PHEV Range',
-      image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80',
+      image: rs6_side_img,
       region: 'Europe' as RegionOfOrigin,
       defaultSegment: 'SUV' as VehicleSegment,
     },
@@ -62,7 +64,7 @@ export const ContinentShowcase: React.FC<ContinentShowcaseProps> = ({ onSelectCo
       badgeColor: 'text-purple-400 bg-purple-500/10 border-purple-500/30',
       description: 'South Korea’s high-performance electric revolution engineered at Hyundai’s technical center at the Nürburgring, delivering simulated dual-clutch gearshifts and 18-minute 800V fast-charging at Ionity stations.',
       stats: '650 HP Dual-Motor • 0-100 in 3.4s • 800V Architecture',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+      image: ioniq5n_track_img,
       region: 'South Korea' as RegionOfOrigin,
       defaultSegment: 'Crossover' as VehicleSegment,
     },
