@@ -34,6 +34,9 @@ import rav4_detail_img from "../assets/images/rav4_detail_color_1793800319730.jp
 import rx500h_rear_img from "../assets/images/rx500h_rear_1789010807397.jpg";
 import rx500h_side_img from "../assets/images/rx500h_side_color_1793885512678.jpg";
 import rx500h_detail_img from "../assets/images/rx500h_detail_color_1793885533352.jpg";
+import civic_side_img from "../assets/images/civic_side_white_1793886007590.jpg";
+import civic_rear_img from "../assets/images/civic_rear_white_1793886023572.jpg";
+import civic_detail_img from "../assets/images/civic_detail_white_1793886040129.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
 export const CARS_DATA: Car[] = [
@@ -228,10 +231,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: honda_civic_type_r_fl5_img,
-      sideProfile: 'https://images.unsplash.com/photo-1605515298946-d062f2e9dc53?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: civic_side_img,
+      rearView: civic_rear_img,
       interior: honda_civic_type_r_fl5_int_img,
-      detail: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80',
+      detail: civic_detail_img,
     },
     features: [
       'Nürburgring Nordschleife Front-Wheel-Drive Record Holder',
