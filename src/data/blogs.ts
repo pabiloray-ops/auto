@@ -1,6 +1,7 @@
 import { BlogPost } from '../types';
 import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
 import modely_front_img from '../assets/images/modely_front_white_1793887012775.jpg';
+import mustang_side_img from '../assets/images/mustang_side_blue_1793887632988.jpg';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -50,7 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Head of European Customs & Transatlantic Homologation',
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
     },
-    coverImage: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80',
+    coverImage: mustang_side_img,
     ratingScore: 9.6,
     pros: [
       'Access to exclusive American trims, naturally aspirated 5.0L V8s, and models not officially distributed through EU dealers',

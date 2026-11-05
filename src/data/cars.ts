@@ -40,6 +40,9 @@ import civic_detail_img from "../assets/images/civic_detail_white_1793886040129.
 import modely_side_img from "../assets/images/modely_side_white_1793887031366.jpg";
 import modely_rear_img from "../assets/images/modely_rear_white_1793887047955.jpg";
 import modely_detail_img from "../assets/images/modely_detail_white_1793887073212.jpg";
+import mustang_side_img from "../assets/images/mustang_side_blue_1793887632988.jpg";
+import mustang_rear_img from "../assets/images/mustang_rear_blue_1793887649363.jpg";
+import mustang_detail_img from "../assets/images/mustang_detail_blue_1793887666964.jpg";
 import xtrail_rear_img from "../assets/images/xtrail_rear_1789010920822.jpg";
 
 export const CARS_DATA: Car[] = [
@@ -388,10 +391,10 @@ export const CARS_DATA: Car[] = [
     availabilityStatus: 'In Showroom (Frankfurt)',
     images: {
       exteriorFront: ford_mustang_dark_horse_img,
-      sideProfile: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80',
-      rearView: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80',
+      sideProfile: mustang_side_img,
+      rearView: mustang_rear_img,
       interior: ford_mustang_dark_horse_int_img,
-      detail: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80',
+      detail: mustang_detail_img,
     },
     features: [
       'High-Output 500+ HP Gen-4 Coyote V8 Engine',

@@ -2,6 +2,7 @@ import React from 'react';
 import { Globe2, ShieldCheck, Sparkles, ArrowRight, Zap, Flame, Compass } from 'lucide-react';
 import { RegionOfOrigin, VehicleSegment } from '../types';
 import rx500h_side_img from '../assets/images/rx500h_side_color_1793885512678.jpg';
+import mustang_side_img from '../assets/images/mustang_side_blue_1793887632988.jpg';
 
 interface ContinentShowcaseProps {
   onSelectContinent: (region: RegionOfOrigin, segment?: VehicleSegment) => void;
@@ -33,7 +34,7 @@ export const ContinentShowcase: React.FC<ContinentShowcaseProps> = ({ onSelectCo
       badgeColor: 'text-blue-400 bg-blue-500/10 border-blue-500/30',
       description: 'From derestricted Autobahn-ready Tesla Model Ys built with German engineering to naturally aspirated 5.0L Coyote V8 Mustang icons that turn heads across Munich and Frankfurt, American cars bring unmatched presence and performance.',
       stats: 'Up to 507 HP V8 • 33-inch 9K Cockpits • 250 km/h Autobahn Spec',
-      image: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=800&q=80',
+      image: mustang_side_img,
       region: 'North America' as RegionOfOrigin,
       defaultSegment: 'Coupe' as VehicleSegment,
     },
